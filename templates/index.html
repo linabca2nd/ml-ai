@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Diabetes Prediction System</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Diabetes Prediction System</h1>
+
+    <p class="subtitle">
+        Machine Learning Based Diabetes Prediction
+    </p>
+
+    <form action="/predict" method="POST">
+
+        <label>Gender</label>
+
+        <select name="gender" required>
+            <option value="Female">Female</option>
+            <option value="Male">Male</option>
+            <option value="Other">Other</option>
+        </select>
+
+        <label>Age</label>
+
+        <input type="number" name="age"
+        min="0.08" max="80" step="any" required>
+
+        <label>Hypertension</label>
+
+        <select name="hypertension" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label>Heart Disease</label>
+
+        <select name="heart_disease" required>
+            <option value="0">No</option>
+            <option value="1">Yes</option>
+        </select>
+
+        <label>Smoking History</label>
+
+        <select name="smoking_history" required>
+            <option value="never">Never</option>
+            <option value="No Info">No Info</option>
+            <option value="current">Current</option>
+            <option value="former">Former</option>
+            <option value="not current">Not Current</option>
+            <option value="ever">Ever</option>
+        </select>
+
+        <label>BMI</label>
+
+        <input type="number" name="bmi"
+        min="10" max="100" step="any" required>
+
+        <label>HbA1c Level</label>
+
+        <input type="number" name="hba1c"
+        min="3" max="20" step="any" required>
+
+        <label>Blood Glucose Level</label>
+
+        <input type="number" name="glucose"
+        min="50" max="500" required>
+
+        <button type="submit">
+            Predict Diabetes
+        </button>
+
+    </form>
+
+    <p class="note">
+        This is an educational prediction system,
+        not a medical diagnosis.
+    </p>
+
+</div>
+
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+    <title>Prediction Result</title>
+
+    <link rel="stylesheet"
+    href="{{ url_for('static', filename='style.css') }}">
+
+</head>
+
+<body>
+
+<div class="container">
+
+    <h1>Prediction Result</h1>
+
+    {% if error %}
+
+        <h2>{{ error }}</h2>
+
+    {% else %}
+
+        <h2>{{ result }}</h2>
+
+        <p>Estimated probability of diabetes:</p>
+
+        <h1>{{ probability }}%</h1>
+
+        <p class="note">
+            This result is not a medical diagnosis.
+        </p>
+
+    {% endif %}
+
+    <a href="/" class="back-button">
+        Back to Home
+    </a>
+
+</div>
+
+</body>
+
+</html>
